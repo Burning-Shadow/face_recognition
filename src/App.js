@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import TodoList from "./demo/TodoList";
+import TodoList from "./pages/TodoList";
 
 function App() {
   return (

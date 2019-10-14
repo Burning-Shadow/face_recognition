@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "antd/dist/antd.css";
 import store from "../store/index";
 import TodoListUI from "../UIComponents/TodoListUI";
+import "./index.less";
 import {
   getInputChangeAction,
   getAddItemAction,
@@ -25,13 +26,15 @@ class TodoList extends Component {
 
   render() {
     return (
-      <TodoListUI
-        inputValue={this.state.inputValue}
-        handleInputChange={this.handleInputChange}
-        handleBtnClick={this.handleBtnClick}
-        list={this.state.list}
-        handleItemDelete={this.handleItemDelete}
-      />
+      <div className="testdiv">
+        <TodoListUI
+          inputValue={this.state.inputValue}
+          handleInputChange={this.handleInputChange}
+          handleBtnClick={this.handleBtnClick}
+          list={this.state.list}
+          handleItemDelete={this.handleItemDelete}
+        />
+      </div>
     );
   }
 
