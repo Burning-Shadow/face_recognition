@@ -413,6 +413,15 @@ module.exports = function(webpackEnv) {
               exclude: /@babel(?:\/|\\{1,2})runtime/,
               loader: require.resolve("babel-loader"),
               options: {
+                plugins: [
+                  [
+                    "import",
+                    {
+                      libraryName: "antd",
+                      style: true
+                    }
+                  ]
+                ],
                 babelrc: false,
                 configFile: false,
                 compact: false,

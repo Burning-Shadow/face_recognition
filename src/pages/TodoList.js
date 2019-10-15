@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import axios from "axios";
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
 import store from "../store/index";
 import TodoListUI from "../UIComponents/TodoListUI";
 import "./index.less";
