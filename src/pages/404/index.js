@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default () => (
-    <div>
-      Sorry, we have no such Page which you input, plz check it.
+    <div style={{textAlign: 'center', fontSize: '24'}}>
+      404 Not Found
     </div>
   )
