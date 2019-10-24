@@ -1,6 +1,6 @@
 import React from "react";
 import App from "./App";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 // import Login from './'
 // import Main from "./route/main";
@@ -13,14 +13,13 @@ import Login from "./pages/login";
 import Admin from "./pages/admin";
 import NoMatch from "./pages/404";
 
-export default class IRouter extends React.Component {
-  render() {
-    return (
+export default function IRouter() {
+  return (
+    <Router>
       <App>
-        <HashRouter>
-          <Switch>
-            <Route path="/login" component={Login} />
-            {/* <Route
+        <Switch>
+          <Route path="/login" component={Login} />
+          {/* <Route
               path="/admin"
               render={() => (
                 <Admin>
@@ -30,17 +29,16 @@ export default class IRouter extends React.Component {
                 </Admin>
               )}
             /> */}
-            <Route path="/admin" component={Admin} />
-            <Route component={NoMatch} />
-          </Switch>
+          <Route path="/admin" component={Admin} />
+          <Route component={NoMatch} />
+        </Switch>
 
-          {/* <Home>
+        {/* <Home>
           <Route path="/main" component={Main} />
           <Route path="/about" component={About} />
           <Route path="/topics" component={Topic} />
         </Home> */}
-        </HashRouter>
       </App>
-    );
-  }
+    </Router>
+  );
 }
