@@ -2,7 +2,7 @@
 
 ### Introduction
 
-This is our studio's webfront source code，the subsequent introduction will be added in the future...
+This is our studio's webfront source code standard，the subsequent introduction will be added in the future...
 
 ### Programing Rules
 

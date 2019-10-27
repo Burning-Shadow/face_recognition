@@ -22,7 +22,7 @@ export default function IRouter() {
           {/* <Route
               path="/admin"
               render={() => (
-                <Admin>
+                <Admin> 
                   <Route path="/admin/" component={NoMatch} />
                   <Route path="/nomatch" component={NoMatch} />
                   <Route component={NoMatch} />
