@@ -2,7 +2,7 @@ import {
   CHANGE_INPUT_VALUE,
   ADD_TODO_ITEM,
   DELETE_TODO_ITEM
-} from "./actionTypes";
+} from "../actionTypes";
 
 // reducer 可以接收 state，但绝不能修改 state。return 出来的数据最终返回给了 store
 const defaultState = {
@@ -16,6 +16,7 @@ export default (state = defaultState, action) => {
   // // console.log("action = ", action);
 
   const newState = JSON.parse(JSON.stringify(state));
+
   switch (action.type) {
     case CHANGE_INPUT_VALUE:
       newState.inputValue = action.value;

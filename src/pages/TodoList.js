@@ -13,7 +13,8 @@ import {
 class TodoList extends Component {
   constructor(props) {
     super(props);
-    this.state = store.getState();
+    this.state = store.getState().todoListReducer;
+    // debugger;
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleStoreChange = this.handleStoreChange.bind(this);
     this.handleBtnClick = this.handleBtnClick.bind(this);
@@ -21,7 +22,7 @@ class TodoList extends Component {
 
     // 订阅事件
     store.subscribe(this.handleStoreChange);
-    // console.log(store.getState());
+    // console.log(store.getState().todoListReducer);
   }
 
   render() {
@@ -40,7 +41,7 @@ class TodoList extends Component {
 
   handleStoreChange() {
     // 组件感知到 state 变化后，重新从 store 中获取 state 数据
-    this.setState(store.getState());
+    this.setState(store.getState().todoListReducer);
   }
 
   handleInputChange(e) {

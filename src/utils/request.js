@@ -1,8 +1,8 @@
 /*
- * @Author: gismanli@tencent.com
+ * @Author: fatewang@tencent.com
  * @Date: 2019-04-19 11:17:56
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2019-10-27 16:43:57
+ * @Last Modified time: 2019-10-27 16:50:26
  */
 
 import qs from "qs";
