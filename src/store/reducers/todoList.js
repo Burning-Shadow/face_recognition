@@ -1,7 +1,8 @@
 import {
   CHANGE_INPUT_VALUE,
   ADD_TODO_ITEM,
-  DELETE_TODO_ITEM
+  DELETE_TODO_ITEM,
+  GET_LIST
 } from "../actionTypes";
 
 // reducer 可以接收 state，但绝不能修改 state。return 出来的数据最终返回给了 store
@@ -27,6 +28,9 @@ export default (state = defaultState, action) => {
       break;
     case DELETE_TODO_ITEM:
       newState.list.splice(action.index, 1);
+      break;
+    case GET_LIST:
+      newState.list = action.data.data.list;
       break;
     default:
   }
