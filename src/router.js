@@ -9,8 +9,10 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 // import Home from "./route/home";
 
 // import Home from "./route/home"
-import Login from "./pages/login";
-import Admin from "./pages/admin";
+
+import studentMessage from './pages/stud_msg/index'; 
+import classMessage from './pages/class_msg/index'; 
+import graphMessage from './pages/graph_msg/index'; 
 import NoMatch from "./pages/404";
 
 export default function IRouter() {
@@ -18,7 +20,10 @@ export default function IRouter() {
     <Router>
       <App>
         <Switch>
-          <Route path="/login" component={Login} />
+          <Route path="/stud_msg" component={studentMessage} />
+          <Route path="/class_msg" component={classMessage} />
+          <Route path="/graph_msg" component={graphMessage} />
+
           {/* <Route
               path="/admin"
               render={() => (
@@ -29,7 +34,6 @@ export default function IRouter() {
                 </Admin>
               )}
             /> */}
-          <Route path="/admin" component={Admin} />
           <Route component={NoMatch} />
         </Switch>
 

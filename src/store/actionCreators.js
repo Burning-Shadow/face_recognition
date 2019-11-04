@@ -1,25 +1,86 @@
+import axios from "axios";
 import {
-  CHANGE_INPUT_VALUE,
-  ADD_TODO_ITEM,
-  DELETE_TODO_ITEM,
-  GET_LIST
+  GET_STUDENTS_LIST,
+  GET_COURSES_LIST,
+  GET_STUDENT_LIST
 } from "./actionTypes";
 
-export const getInputChangeAction = value => ({
-  type: CHANGE_INPUT_VALUE,
-  value
-});
-
-export const getAddItemAction = () => ({
-  type: ADD_TODO_ITEM
-});
-
-export const getDeleteTodoItem = index => ({
-  type: DELETE_TODO_ITEM,
-  index
-});
-
-export const getListAction = data => ({
-  type: GET_LIST,
+// 获取学生列表
+const getStudentsListAction = data => ({
+  type: GET_STUDENTS_LIST,
   data
 });
+
+export const getStudentsList = () => {
+  return dispatch => {
+    axios
+      .get("http://118.31.58.177:8080/Face/signIn/showAll", {
+        params: {
+          className: "软件1701"
+        }
+      })
+      .then(res => {
+        const data = res.data;
+        const action = getStudentsListAction(data);
+        dispatch(action);
+      })
+      .finally(() => {
+        console.log("Now we are alreday get the studentsList");
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+};
+
+// 获取学生具体信息
+const getStudentAction = data => ({
+  type: GET_STUDENT_LIST,
+  data
+});
+
+export const getStudentInfo = (stuNum = "04173011", lessonId = 40289) => {
+  return dispatch => {
+    axios
+      .get("http://118.31.58.177:8080/Face/signIn/showOne", {
+        params: {
+          num: stuNum,
+          lessonId: lessonId
+        }
+      })
+      .then(res => {
+        const data = res.data;
+        const action = getStudentAction(data);
+        dispatch(action);
+      });
+  };
+};
+
+// 获取课程表
+const getCourseListAction = data => ({
+  type: GET_COURSES_LIST,
+  data
+});
+
+export const getCoursesList = () => {
+  return dispatch => {
+    axios
+      .get("http://118.31.58.177:8080/Face/courseTable/select", {
+        params: {
+          className: "软件1701"
+        }
+      })
+      .then(res => {
+        console.log("res = ", res);
+        const data = res.data;
+        const action = getCourseListAction(data);
+        dispatch(action);
+      })
+      .finally(() => {
+        console.log("Now we are alreday get the coursesList");
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+};

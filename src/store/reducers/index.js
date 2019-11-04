@@ -1,7 +1,11 @@
 import { combineReducers } from "redux";
 
-import todoList from "./todoList";
+import studentMessage from "./studentMessage";
+import classMessage from "./classMessage";
+import graphMessage from "./graphMessage";
 
 export default combineReducers({
-  todoList
+  studentMessage,
+  classMessage,
+  graphMessage
 });

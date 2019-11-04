@@ -1,32 +1,71 @@
-import React from "react";
-// import logo from "./logo.svg";
-import "./App.css";
+import React, { Component } from "react";
 import { HashRouter as Router, Link } from "react-router-dom";
-import TodoList from "./pages/TodoList";
+import Header from "./publicComponents/header";
 
-function App(props) {
-  return (
-    <div className="App">
-      <div>
-        <Router>
-          <ul>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/admin">Admin</Link>
-            </li>
-            <li>
-              <Link to="/nomatch">NoMatch</Link>
-            </li>
-          </ul>
-        </Router>
-        <hr />
-        {props.children}
-        <TodoList />
+import { Layout, Menu } from "antd";
+const { Content, Sider } = Layout;
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillMount() {
+    let currentKey = window.location.hash.replace(/#|\?.*$/g, "");
+    console.log(currentKey)
+    this.setState({
+      currentKey
+    });
+  }
+
+  state = {
+    currentKey: ""
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Layout>
+          <Header />
+          <Layout>
+            <Sider width={200} style={{ background: "#fff" }}>
+              <Router>
+                <Menu
+                  mode="inline"
+                  defaultSelectedKeys={[this.state.currentKey]}
+                  defaultOpenKeys={["sub1"]}
+                  style={{ height: "100%", borderRight: 0, marginTop: 20 }}
+                >
+                  <Menu.Item key="/stud_msg">
+                    <Link to="/stud_msg">Student Message</Link>
+                  </Menu.Item>
+                  <Menu.Item key="/class_msg">
+                    <Link to="/class_msg">Class Message</Link>
+                  </Menu.Item>
+                  <Menu.Item key="/graph_msg">
+                    <Link to="/graph_msg">Graph</Link>
+                  </Menu.Item>
+                </Menu>
+              </Router>
+            </Sider>
+            <Layout style={{ padding: "24px" }}>
+              <Content
+                style={{
+                  background: "#fff",
+                  padding: 24,
+                  margin: 0,
+                  minHeight: 280
+                }}
+              >
+                {this.props.children}
+              </Content>
+            </Layout>
+          </Layout>
+        </Layout>
+        , mountNode
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

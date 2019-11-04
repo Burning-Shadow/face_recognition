@@ -1,5 +1,3 @@
-export const CHANGE_INPUT_VALUE = 'change_input_value'
-export const ADD_TODO_ITEM = 'add_todo_item'
-export const DELETE_TODO_ITEM = 'delete_todo_item'
-export const GET_LIST = 'get_list'
-
+export const GET_STUDENTS_LIST = "get_students.list";
+export const GET_COURSES_LIST = "get_courses.list";
+export const GET_STUDENT_LIST = "get_student.list";
