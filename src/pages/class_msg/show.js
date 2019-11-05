@@ -11,7 +11,7 @@ import "./index.css";
 
 export default props => {
   const data = props.dataSource;
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <table

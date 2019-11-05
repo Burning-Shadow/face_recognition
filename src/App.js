@@ -8,11 +8,12 @@ const { Content, Sider } = Layout;
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   componentWillMount() {
     let currentKey = window.location.hash.replace(/#|\?.*$/g, "");
-    console.log(currentKey)
+    // console.log(currentKey);
     this.setState({
       currentKey
     });

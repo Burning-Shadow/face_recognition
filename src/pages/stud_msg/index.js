@@ -8,6 +8,10 @@ import { getStudentsList } from "../../store/actionCreators";
 class StudentMessage extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      ...store.getState().studentMessage,
+      isDetailWindowShow: false
+    };
     this.state = store.getState().studentMessage;
     store.subscribe(this.handleStoreChange);
   }
@@ -18,17 +22,33 @@ class StudentMessage extends Component {
     // console.log("=======", this.state.absentList);
     return (
       <div>
-        <StudentMessageUI list={this.state.arriveList} title="Arrived" />
-        <StudentMessageUI list={this.state.lateList} title="Late" />
-        <StudentMessageUI list={this.state.absentList} title="Absent" />
+        <StudentMessageUI
+          toShow={this.openDetail}
+          list={this.state.arriveList}
+          title="Arrived"
+        />
+        <StudentMessageUI
+          toShow={this.openDetail}
+          list={this.state.lateList}
+          title="Late"
+        />
+        <StudentMessageUI
+          toShow={this.openDetail}
+          list={this.state.absentList}
+          title="Absent"
+        />
       </div>
     );
   }
 
+  openDetail = () => {
+    this.setState({ isDetailWindowShow: true });
+  };
+
   handleStoreChange = () => {
     // 组件感知到 state 变化后，重新从 store 中获取 state 数据
     this.setState(store.getState().studentMessage);
-  }
+  };
 
   componentDidMount() {
     const action = getStudentsList();
