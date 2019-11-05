@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Echarts from "echarts";
 import store from "../../store/index";
-import GraphMessageUI from './show'
+// import GraphMessageUI from "./show";
 import { getStudentsList } from "../../store/actionCreators";
 
 class GraphMessage extends Component {
@@ -14,7 +14,7 @@ class GraphMessage extends Component {
   handleStoreChange = () => {
     // 组件感知到 state 变化后，重新从 store 中获取 state 数据
     this.setState(store.getState().studentMessage);
-  }
+  };
 
   render() {
     return <div id="main" style={{ width: "auto%", height: "800px" }}></div>;
@@ -27,9 +27,9 @@ class GraphMessage extends Component {
   async init() {
     const action = getStudentsList();
     await store.dispatch(action);
-    console.log(this.state.arriveList);
+    // console.log(this.state.arriveList);
     await this.createChartOption();
-    console.log(this.state.option)
+    // console.log(this.state.option);
     await this.showChart();
   }
 
@@ -76,7 +76,7 @@ class GraphMessage extends Component {
         }
       ]
     };
-    this.setState({option: options});
+    this.setState({ option: options });
   }
 
   showChart() {

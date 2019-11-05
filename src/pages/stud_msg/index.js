@@ -41,8 +41,13 @@ class StudentMessage extends Component {
     );
   }
 
-  openDetail = () => {
-    this.setState({ isDetailWindowShow: true });
+  openDetail = data => {
+    return () => {
+      console.log(data);
+      this.setState({
+        isDetailWindowShow: true
+      });
+    };
   };
 
   handleStoreChange = () => {

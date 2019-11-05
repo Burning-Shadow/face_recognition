@@ -21,11 +21,12 @@ export const getStudentsList = () => {
       })
       .then(res => {
         const data = res.data;
+        // console.log('Student Message = ', data);
         const action = getStudentsListAction(data);
         dispatch(action);
       })
       .finally(() => {
-        console.log("Now we are alreday get the studentsList");
+        // console.log("Now we are alreday get the studentsList");
       })
       .catch(e => {
         console.log(e);
@@ -71,13 +72,13 @@ export const getCoursesList = () => {
         }
       })
       .then(res => {
-        console.log("res = ", res);
+        // console.log("res = ", res);
         const data = res.data;
         const action = getCourseListAction(data);
         dispatch(action);
       })
       .finally(() => {
-        console.log("Now we are alreday get the coursesList");
+        // console.log("Now we are alreday get the coursesList");
       })
       .catch(e => {
         console.log(e);
