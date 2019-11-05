@@ -1,5 +1,5 @@
 import React from "react";
-import { getStudentInfo } from "../../store/actionCreators";
+// import { getStudentInfo } from "../../store/actionCreators";
 import { Card, Avatar, Col, Row, Modal } from "antd";
 
 const { Meta } = Card;

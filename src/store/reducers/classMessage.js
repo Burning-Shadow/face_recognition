@@ -97,11 +97,11 @@ const defaultState = {
   ]
 };
 
-function jsonToString(data) {
-  let newData = new Array(5);
+// function jsonToString(data) {
+//   let newData = new Array(5);
 
-  return;
-}
+//   return;
+// }
 
 function initData(data) {
   const newData = new Array(5),
@@ -109,46 +109,43 @@ function initData(data) {
 
   newData[0] = {
     key: index,
-    Monday: () => {
-      let item = data.slice(0, 1)[0];
-      return `${item.kcmc}<br>${item.xm}`;
-    },
-    Tuesday: () => (JSON.stringify(data.slice(5, 6)[0])),
-    Wednesday: JSON.stringify(data.slice(10, 11)[0]),
-    Thursday: JSON.stringify(data.slice(15, 16)[0]),
-    Friday: JSON.stringify(data.slice(20, 21)[0])
+    Monday: data.slice(0, 1)[0],
+    Tuesday: data.slice(5, 6)[0],
+    Wednesday: data.slice(10, 11)[0],
+    Thursday: data.slice(15, 16)[0],
+    Friday: data.slice(20, 21)[0]
   };
   newData[1] = {
     key: index + 1,
-    Monday: JSON.stringify(data.slice(1, 2)[0]),
-    Tuesday: JSON.stringify(data.slice(6, 7)[0]),
-    Wednesday: JSON.stringify(data.slice(11, 12)[0]),
-    Thursday: JSON.stringify(data.slice(16, 17)[0]),
-    Friday: JSON.stringify(data.slice(21, 22)[0])
+    Monday: data.slice(1, 2)[0],
+    Tuesday: data.slice(6, 7)[0],
+    Wednesday: data.slice(11, 12)[0],
+    Thursday: data.slice(16, 17)[0],
+    Friday: data.slice(21, 22)[0]
   };
   newData[2] = {
     key: index + 2,
-    Monday: JSON.stringify(data.slice(2, 3)[0]),
-    Tuesday: JSON.stringify(data.slice(7, 8)[0]),
-    Wednesday: JSON.stringify(data.slice(12, 13)[0]),
-    Thursday: JSON.stringify(data.slice(17, 18)[0]),
-    Friday: JSON.stringify(data.slice(22, 23)[0])
+    Monday: data.slice(2, 3)[0],
+    Tuesday: data.slice(7, 8)[0],
+    Wednesday: data.slice(12, 13)[0],
+    Thursday: data.slice(17, 18)[0],
+    Friday: data.slice(22, 23)[0]
   };
   newData[3] = {
     key: index + 3,
-    Monday: JSON.stringify(data.slice(3, 4)[0]),
-    Tuesday: JSON.stringify(data.slice(8, 9)[0]),
-    Wednesday: JSON.stringify(data.slice(13, 14)[0]),
-    Thursday: JSON.stringify(data.slice(18, 19)[0]),
-    Friday: JSON.stringify(data.slice(23, 24)[0])
+    Monday: data.slice(3, 4)[0],
+    Tuesday: data.slice(8, 9)[0],
+    Wednesday: data.slice(13, 14)[0],
+    Thursday: data.slice(18, 19)[0],
+    Friday: data.slice(23, 24)[0]
   };
   newData[4] = {
     key: index + 4,
-    Monday: JSON.stringify(data.slice(4, 5)[0]),
-    Tuesday: JSON.stringify(data.slice(9, 10)[0]),
-    Wednesday: JSON.stringify(data.slice(14, 15)[0]),
-    Thursday: JSON.stringify(data.slice(19, 20)[0]),
-    Friday: JSON.stringify(data.slice(24, 25)[0])
+    Monday: data.slice(4, 5)[0],
+    Tuesday: data.slice(9, 10)[0],
+    Wednesday: data.slice(14, 15)[0],
+    Thursday: data.slice(19, 20)[0],
+    Friday: data.slice(24, 25)[0]
   };
 
   return newData;
