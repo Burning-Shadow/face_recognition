@@ -62,7 +62,7 @@ class StudentMessage extends Component {
   closeDetail = data => {
     return () => {
       this.setState({
-        isDetailWindowShow: false
+        isDetailWindowShow: data
       });
     };
   };
