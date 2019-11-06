@@ -13,7 +13,6 @@ class App extends Component {
 
   componentWillMount() {
     let currentKey = window.location.hash.replace(/#|\?.*$/g, "");
-    console.log(currentKey);
     this.setState({
       currentKey
     });
@@ -29,8 +28,8 @@ class App extends Component {
               <Router>
                 <Menu
                   mode="inline"
-                  defaultSelectedKeys={this.state.currentKey || "/stud_msg"}
-                  defaultOpenKeys={["sub1"]}
+                  defaultSelectedKeys={this.state.currentKey === "/"? "/stud_msg": this.state.currentKey }
+                  defaultOpenKeys={"/stud_msg"}
                   style={{ height: "100%", borderRight: 0, marginTop: 20 }}
                 >
                   <Menu.Item key="/stud_msg">
