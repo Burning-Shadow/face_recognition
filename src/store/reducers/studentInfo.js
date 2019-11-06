@@ -1,26 +1,27 @@
 import { GET_STUDENT_LIST } from "../actionTypes";
 
 const defaultState = {
-  name: "fatewang",
-  academy: "计算机学院",
-  group: "软件1603",
-  signTime: "2019-11-04 10:10:40.0",
-  gender: "M",
-  course: JSON.stringify({
-    cdmc: " FF305  ",
-    className: null,
-    isDou: 0,
-    jcs: "3-4",
-    kcmc: "操作系统A",
-    status: null,
-    xm: " 陈莉君",
-    xqjmc: "1",
-    xqmc: " 长安校区东区 ",
-    zcd: "9"
-  }),
-  image: "",
-  num: "04163067",
-
+  info: {
+    name: "fatewang",
+    academy: "计算机学院",
+    group: "软件1603",
+    signTime: "2019-11-04 10:10:40.0",
+    gender: "M",
+    course: JSON.stringify({
+      cdmc: " FF305  ",
+      className: null,
+      isDou: 0,
+      jcs: "3-4",
+      kcmc: "操作系统A",
+      status: null,
+      xm: " 陈莉君",
+      xqjmc: "1",
+      xqmc: " 长安校区东区 ",
+      zcd: "9"
+    }),
+    image: "",
+    num: "04163067"
+  }
 };
 
 export default (state = defaultState, action) => {
@@ -30,15 +31,16 @@ export default (state = defaultState, action) => {
 
   switch (action.type) {
     case GET_STUDENT_LIST:
-      console.log(action);
-      newState.name = action.academy;
-      newState.name = action.name;
-      newState.name = action.group;
-      newState.name = action.signTime;
-      newState.name = action.gender;
-      newState.name = action.course;
-      newState.name = action.image;
-      newState.name = action.num;
+      // console.log(action);
+      const data = action.data;
+      newState.info.academy = data.academy;
+      newState.info.name = data.name;
+      newState.info.group = data.group;
+      newState.info.signTime = data.signTime;
+      newState.info.gender = data.gender;
+      newState.info.course = data.course;
+      newState.info.image = data.image;
+      newState.info.num = data.num;
       break;
     default:
   }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import "antd/dist/antd.css";
 import StudentMessageUI from "./show";
+import StudentInfoUI from "./info";
 import store from "../../store/index";
 import "./index.less";
 import { getStudentsList, getStudentInfo } from "../../store/actionCreators";
@@ -37,24 +38,41 @@ class StudentMessage extends Component {
           list={this.state.absentList}
           title="Absent"
         />
+        <StudentInfoUI
+          visible={this.state.isDetailWindowShow}
+          msg={this.state.info}
+          closeDetail={this.closeDetail}
+        />
       </div>
     );
   }
 
   openDetail = data => {
-    return () => {
-      console.log(data);
-      this.setState({
+    const that = this;
+    return async function() {
+      // console.log(data);
+      const action = getStudentInfo(data.num, data.lessionId);
+      await store.dispatch(action);
+      await that.setState({
         isDetailWindowShow: true
       });
-      const action = getStudentInfo(data.num, data.lessionId);
-      store.dispatch(action);
+    };
+  };
+
+  closeDetail = data => {
+    return () => {
+      this.setState({
+        isDetailWindowShow: false
+      });
     };
   };
 
   handleStoreChange = () => {
     // 组件感知到 state 变化后，重新从 store 中获取 state 数据
-    this.setState(store.getState().studentMessage);
+    this.setState({
+      ...store.getState().studentMessage,
+      ...store.getState().studentInfo
+    });
   };
 
   componentDidMount() {

@@ -1,14 +1,8 @@
 import React from "react";
-// import { getStudentInfo } from "../../store/actionCreators";
-import { Card, Avatar, Col, Row, Modal } from "antd";
-
+import { Card, Avatar, Col, Row } from "antd";
 const { Meta } = Card;
-// import "./index.less";
 
 export default props => {
-  // const clickFn = reqData => {
-  //   props.toShow(reqData);
-  // };
   return (
     <div>
       <Row gutter={16} style={{ marginBottom: 30 }}>
