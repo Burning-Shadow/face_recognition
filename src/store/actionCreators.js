@@ -50,7 +50,8 @@ export const getStudentInfo = (stuNum = "04173011", lessonId = 40289) => {
         }
       })
       .then(res => {
-        const data = res.data;
+        const data = res.data.data;
+        console.log(data);
         const action = getStudentAction(data);
         dispatch(action);
       });

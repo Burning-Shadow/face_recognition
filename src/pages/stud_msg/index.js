@@ -3,16 +3,16 @@ import React, { Component } from "react";
 import StudentMessageUI from "./show";
 import store from "../../store/index";
 import "./index.less";
-import { getStudentsList } from "../../store/actionCreators";
+import { getStudentsList, getStudentInfo } from "../../store/actionCreators";
 
 class StudentMessage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       ...store.getState().studentMessage,
+      ...store.getState().studentInfo,
       isDetailWindowShow: false
     };
-    this.state = store.getState().studentMessage;
     store.subscribe(this.handleStoreChange);
   }
 
@@ -47,6 +47,8 @@ class StudentMessage extends Component {
       this.setState({
         isDetailWindowShow: true
       });
+      const action = getStudentInfo(data.num, data.lessionId);
+      store.dispatch(action);
     };
   };
 
