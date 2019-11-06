@@ -1,3 +1,4 @@
+// 此文件有问题，鉴于时间关系不对其进行更多修改，待后期开发时再完善
 export default (urlData, type) => {
   let arr = urlData.split(",");
   let mime = arr[0].match(/:(.*?);/)[1] || type;

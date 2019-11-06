@@ -21,7 +21,8 @@ const defaultState = {
     }),
     image: "",
     num: "04163067",
-    faceUrl: "https://i0.hdslb.com/bfs/archive/fec5e009989c7dc2a20844db52ff32e62aca1828.jpg@336w_190h.webp"
+    faceUrl:
+      "https://i0.hdslb.com/bfs/archive/fec5e009989c7dc2a20844db52ff32e62aca1828.jpg@336w_190h.webp"
   }
 };
 
@@ -33,16 +34,8 @@ export default (state = defaultState, action) => {
   switch (action.type) {
     case GET_STUDENT_LIST:
       // console.log(action);
-      const data = action.data;
-      newState.info.academy = data.academy;
-      newState.info.name = data.name;
-      newState.info.group = data.group;
-      newState.info.signTime = data.signTime;
-      newState.info.gender = data.gender;
-      newState.info.course = data.course;
-      newState.info.image = data.image;
-      newState.info.num = data.num;
-      newState.info.faceUrl = data.faceUrl;
+      const data = JSON.parse(JSON.stringify(action.data));
+      newState.info = data;
       break;
     default:
   }

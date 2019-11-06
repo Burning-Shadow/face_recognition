@@ -1,6 +1,11 @@
 import React from "react";
 import App from "./App";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 
 // import Login from './'
 // import Main from "./route/main";
@@ -10,9 +15,9 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 // import Home from "./route/home"
 
-import studentMessage from './pages/stud_msg/index'; 
-import classMessage from './pages/class_msg/index'; 
-import graphMessage from './pages/graph_msg/index'; 
+import studentMessage from "./pages/stud_msg/index";
+import classMessage from "./pages/class_msg/index";
+import graphMessage from "./pages/graph_msg/index";
 import NoMatch from "./pages/404";
 
 export default function IRouter() {
@@ -20,6 +25,11 @@ export default function IRouter() {
     <Router>
       <App>
         <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <Redirect to="/stud_msg"></Redirect>}
+          ></Route>
           <Route path="/stud_msg" component={studentMessage} />
           <Route path="/class_msg" component={classMessage} />
           <Route path="/graph_msg" component={graphMessage} />
