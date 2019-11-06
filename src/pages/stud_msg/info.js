@@ -11,7 +11,7 @@ export default props => {
 
   const { loading } = state;
 
-  console.log(props);
+  // console.log(props);
 
   const data = props.msg;
 
@@ -37,6 +37,13 @@ export default props => {
             </Button>
           ]}
         >
+          <p className="item" style={{ textAlign: "center" }}>
+            <img
+              src={data.faceUrl}
+              alt="faceUrl"
+              style={{ width: 200, height: 'auto', borderRadius: "10%" }}
+            />
+          </p>
           <p className="item">
             <span className="leftside">学号（StudentNumber）: </span>
             <span className="rightside">{data.num}</span>

@@ -33,7 +33,7 @@ export default props => {
           </tr>
           {data.map((item, index) => (
             <tr key={index}>
-              <td>{(index + 1) + "-" + (index + 2)}</td>
+              <td>{index * 2 + 1 + "-" + (index * 2 + 2)}</td>
               <td>
                 <h3>{item.Monday ? item.Monday.kcmc : " "}</h3>
                 <div>

@@ -20,7 +20,8 @@ const defaultState = {
       zcd: "9"
     }),
     image: "",
-    num: "04163067"
+    num: "04163067",
+    faceUrl: "https://i0.hdslb.com/bfs/archive/fec5e009989c7dc2a20844db52ff32e62aca1828.jpg@336w_190h.webp"
   }
 };
 
@@ -41,6 +42,7 @@ export default (state = defaultState, action) => {
       newState.info.course = data.course;
       newState.info.image = data.image;
       newState.info.num = data.num;
+      newState.info.faceUrl = data.faceUrl;
       break;
     default:
   }

@@ -40,7 +40,7 @@ const getStudentAction = data => ({
   data
 });
 
-export const getStudentInfo = (stuNum = "04173011", lessonId = 40289) => {
+export const getStudentInfo = (stuNum = "04173011", lessonId = 40289, faceUrl = "https://oss-cn-shenzhen.aliyuncs.com/bimawen/image/face/7770BDE9E33A/ZDg3ODAxZjc0ODgyY2FlMTBiZDkxN2U3NWViMWQyOWYmc3RvcmFnZV90eXBlPW9zcw==.jpg") => {
   return dispatch => {
     axios
       .get("http://118.31.58.177:8080/Face/signIn/showOne", {
@@ -51,7 +51,8 @@ export const getStudentInfo = (stuNum = "04173011", lessonId = 40289) => {
       })
       .then(res => {
         const data = res.data.data;
-        console.log(data);
+        data.faceUrl = faceUrl;
+        // console.log(data);
         const action = getStudentAction(data);
         dispatch(action);
       });

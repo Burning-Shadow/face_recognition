@@ -50,11 +50,12 @@ class StudentMessage extends Component {
   openDetail = data => {
     const that = this;
     return async function() {
-      // console.log(data);
-      const action = getStudentInfo(data.num, data.lessionId);
+      // console.log('data ======= ',data);
+      const action = getStudentInfo(data.num, data.lessionId, data.faceUrl);
       await store.dispatch(action);
       await that.setState({
-        isDetailWindowShow: true
+        isDetailWindowShow: true,
+
       });
     };
   };
