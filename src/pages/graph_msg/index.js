@@ -22,6 +22,10 @@ class GraphMessage extends Component {
 
   componentWillMount() {
     this.init();
+    // setInterval(() => {
+    //   window.location.href = `/graph_msg/${new Date().getTime()}`;
+    //   console.log(window.location.hash.replace(/#|\?.*$/g, ""));
+    // });
   }
 
   async init() {

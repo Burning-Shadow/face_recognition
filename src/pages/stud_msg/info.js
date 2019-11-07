@@ -38,10 +38,15 @@ export default props => {
           ]}
         >
           <p className="item" style={{ textAlign: "center" }}>
-            <img
+            {/* <img
               src={data.faceUrl}
               alt="faceUrl"
-              style={{ width: 200, height: 'auto', borderRadius: "10%" }}
+              style={{ width: 200, height: "auto", borderRadius: "10%" }}
+            /> */}
+            <img
+              src={data.imageUrl}
+              alt="imageUrl"
+              style={{ width: 200, height: "auto", borderRadius: "10%" }}
             />
           </p>
           <p className="item">
@@ -71,12 +76,12 @@ export default props => {
             <span className="rightside">{data.course.xm}</span>
           </p>
           <p className="item">
-            <span className="leftside">教室位置（ClassRoom）: </span>
-            <span className="rightside">{data.course.jcs}</span>
-          </p>
-          <p className="item">
             <span className="leftside">校区位置（Position）: </span>
             <span className="rightside">{data.course.xqmc}</span>
+          </p>
+          <p className="item">
+            <span className="leftside">教室位置（ClassRoom）: </span>
+            <span className="rightside">{data.course.cdmc}</span>
           </p>
         </Modal>
       </div>

@@ -46,12 +46,6 @@ export default function IRouter() {
             /> */}
           <Route component={NoMatch} />
         </Switch>
-
-        {/* <Home>
-          <Route path="/main" component={Main} />
-          <Route path="/about" component={About} />
-          <Route path="/topics" component={Topic} />
-        </Home> */}
       </App>
     </Router>
   );

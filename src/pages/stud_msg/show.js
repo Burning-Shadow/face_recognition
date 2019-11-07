@@ -16,7 +16,7 @@ export default props => {
               <Meta
                 avatar={<Avatar size="large" src={item.faceUrl} />}
                 title={item.num}
-                description={"courseId: " + item.lessonId}
+                description={"count: " + item.count}
               />
             </Card>
           </Col>

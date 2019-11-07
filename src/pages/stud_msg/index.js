@@ -54,8 +54,7 @@ class StudentMessage extends Component {
       const action = getStudentInfo(data.num, data.lessionId, data.faceUrl);
       await store.dispatch(action);
       await that.setState({
-        isDetailWindowShow: true,
-
+        isDetailWindowShow: true
       });
     };
   };
@@ -76,9 +75,14 @@ class StudentMessage extends Component {
     });
   };
 
-  componentDidMount() {
+  dispatchAction = () => {
     const action = getStudentsList();
     store.dispatch(action);
+  };
+
+  componentDidMount() {
+    this.dispatchAction();
+    setInterval(this.dispatchAction, 10000);
   }
 }
 
