@@ -58,7 +58,6 @@ class App extends Component {
             </Layout>
           </Layout>
         </Layout>
-        , mountNode
       </div>
     );
   }
